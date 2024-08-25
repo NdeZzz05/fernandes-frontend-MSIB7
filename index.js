@@ -15,15 +15,24 @@ const diagonalSum = (arr) => {
   let n = arr.length;
   let sum = 0;
 
-  for (let i = 0; i < n; i++) {
-    sum += arr[i][i];
+  //   Pakai looping for
+  //   for (let i = 0; i < n; i++) {
+  //     sum += arr[i][i];
 
+  //     if (i !== n - i - 1) {
+  //       sum += arr[i][n - i - 1];
+  //     }
+  //   }
+
+  //   Pakai method ForEach
+  arr.forEach((baris, i) => {
+    sum += baris[i];
     if (i !== n - i - 1) {
-      sum += arr[i][n - i - 1];
+      sum += baris[n - i - 1];
     }
-  }
+  });
 
   return sum;
 };
 
-console.log(diagonalSum(arr));
+console.log(diagonalSum(arr2));
